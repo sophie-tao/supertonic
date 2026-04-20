@@ -1,0 +1,389 @@
+* {
+    margin: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'kiyosuna';
+    src: url('fonts/KiyosunaSans-L-1.0.1.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+3000-30FF, U+4E00-9FFF;
+}
+
+body {
+    font-family: "Archivo", sans-serif;
+    line-height: 1.5;
+    width: 100vw;
+}
+
+main {
+    margin-top: calc(100vh + 500px);
+    padding: 70px;
+}
+
+
+
+
+/* nav */
+
+
+nav {
+    display: flex;
+    justify-content: end;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    gap: 3rem;
+    padding: 1.5rem 2rem;
+    font-size: 14px;
+    top: 0;
+    opacity: 0;
+}
+
+.nav-link-group {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+    padding: 5px 8px;
+}
+
+.nav-link-group img {
+    height: 6px;
+    width: 6px;
+}
+
+.nav-link-group:hover {
+    transform: skewY(-5deg);
+    transition: 0.3s ease;
+    /* background-color: black; */
+    /* color: white; */
+    outline: black 1px solid;
+}
+
+
+
+/* hero */
+
+header {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 0;
+    padding: 50px 70px;
+}
+
+#new-wordmark {
+    position: relative;
+    margin-bottom: 3vw;
+    transition: all 0.3s ease;
+    height: 22.69vw;
+}
+
+#new-wordmark-en {
+    display: flex;
+    gap: 1.8vw;
+    width: 70vw;
+    height: auto;
+    margin-bottom: 1.75vw;
+}
+
+#new-wordmark-en img {
+    height: 12.5vw;
+    width: auto;
+    max-height: 100%;
+    display: block;
+    flex-shrink: 1;
+    /* flex-grow: 0; */
+    transition: none;
+    transform-origin: left center;
+}
+
+#new-wordmark-jp {
+    position: relative;
+    left: 13.5vw;
+    display: flex;
+    gap: 1vw;
+    width: 56.22vw;
+}
+
+#new-wordmark-jp img {
+    height: 8.8vw;
+    width: auto;
+    max-height: 100%;
+    display: block;
+    flex-shrink: 1;
+    transition: none;
+    transform-origin: left center;
+}
+
+#letter-s #letter-p #letter-r #letter-o #letter-c #letter-su #letter-pa #letter-to #letter-xtu {
+    transform: skewY(-30deg);
+}
+
+#letter-u #letter-e #letter-t #letter-n #letter-i #letter-nobashibou-1 #letter-nobashibou-2 #letter-ni #letter-ku {
+    transform: skewY(30deg);
+}
+
+
+
+/* kerning */
+
+#letter-pa {
+    margin-left: 0.6vw;
+}
+
+#letter-nobashibou-2 {
+    margin-left: 0.6vw;
+}
+
+#letter-to {
+    margin-left: 1.6vw;
+}
+
+#letter-ni {
+    margin-left: 1vw;
+}
+
+#letter-xtu {
+    margin-left: 1.2vw;
+}
+
+#letter-ku {
+    margin-left: 0.6vw;
+}
+
+
+#letter-p {
+    margin-left: 0.25vw;
+}
+
+#letter-r {
+    margin-left: 0.6vw;
+}
+
+#letter-n {
+    margin-left: 0.25vw;
+}
+
+#letter-i {
+    margin-left: 0.7vw;
+}
+
+#letter-c {
+    margin-left: 0.55vw;
+}
+
+/* #letter-s:hover {
+    transform: skewY(-30deg);
+} */
+
+
+
+#header-part2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-top: 40px;
+}
+
+#subheader {
+    width: 41vw;
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
+}
+
+#header-info-jp {
+    margin-bottom: 2rem;
+}
+
+#header-info div p:nth-child(1) {
+    margin-bottom: 0.5rem;
+}
+
+header, .q-frame {
+    will-change: opacity, transform;
+}
+
+#new-wordmark img,
+#subheader-1, #subheader-2, #subheader-3,
+#header-info {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+
+
+/* question sections */
+
+.q-frame {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #ffffff; */
+    gap: 5rem;
+}
+
+.q-frame img {
+    width: 20px;
+    height: 20px;
+}
+
+.q-frame p {
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    max-width: 350px;
+}
+
+.q {
+    display: flex;
+    gap: 2rem;
+}
+
+.q-en {
+    position: relative;
+    top: 2rem;
+}
+
+
+
+
+/* feature sections */
+
+.feature {
+    width: 100%;
+    height: 130vh;
+    position: relative;
+}
+
+.feature .display-text {
+    position: absolute;
+    transition: 0.3s ease;
+}
+
+.feature .display-text p {
+    font-family: "Sofia Sans Condensed";
+    font-weight: 180;
+    font-size: 128px;
+    line-height: 0.95;
+    position: relative;
+}
+
+.feature span.jp {
+    font-family: "Noto Sans JP";
+    font-weight: 150;
+    font-size: 100px;
+    margin: 0 1rem;
+}
+
+.feature p.caption {
+    font-size: 14px;
+    font-family: "Archivo";
+    font-weight: normal;
+    line-height: 1.5;
+    position: absolute;
+}
+
+.feature > img {
+    position: absolute;
+    z-index: 9;
+}
+
+.feature .display-text img {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+}
+
+img, .display-text {
+    will-change: transform;
+}
+
+.feature .display-text p,
+.feature .display-text img,
+.feature .caption {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.display-text:hover {
+    transform: skewY(-5deg);
+}
+
+
+
+
+#around {
+    margin-top: 300px;
+}
+
+#around .display-text {
+    right: 170px;
+    top: 100px;
+}
+
+#around .display-text > img {
+    left: 155px;
+    top: -30px;
+}
+
+#around .display-text p:nth-child(2) {
+    left: 100px;
+}
+
+#around .display-text p:nth-child(4) {
+    left: 50px;
+    margin-top: 12px;
+}
+
+#around > img {
+    width: 534px;
+    left: 200px;
+    top: 80px;
+}
+
+#around .caption {
+    right: 500px;
+    top: 500px;
+}
+
+
+
+#facet > img {
+    width: 980px;
+    right: -30px;
+    top: 150px;
+}
+
+#facet .display-text p:nth-child(3) {
+    left: 120px;
+}
+
+#facet .display-text p:nth-child(5) {
+    left: 160px;
+}
+
+#facet .caption {
+    left: 100px;
+    top: 550px;
+}
+
+#facet .display-text > img {
+    left: 55px;
+    top: -30px;
+}
