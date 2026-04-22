@@ -8,6 +8,7 @@ const blackSection = document.getElementById('black-section');
 const footerLinks = document.querySelector("#footer-links");
 const footerLink = document.querySelectorAll(".footer-link");
 const footer = document.querySelector("footer");
+const captions = document.querySelectorAll(".caption");
 const body = document.querySelectorAll('body');
 const headerAll = document.querySelectorAll('#new-wordmark img, #subheader-1, #subheader-2, #subheader-3,  #header-info');
 const skewTargets = document.querySelectorAll('.skewer');
@@ -408,7 +409,7 @@ window.addEventListener('load', () => {
 
 skewTargets.forEach(el => {
     el.addEventListener('mouseenter', () => {
-        anime.remove(el); // stop any running animation
+        // anime.remove(el); // stop any running animation
         anime({
             targets: el,
             skewY: -15,
@@ -430,7 +431,7 @@ skewTargets.forEach(el => {
 
 skewTargets2.forEach(el => {
     el.addEventListener('mouseenter', () => {
-        anime.remove(el); // stop any running animation
+        // anime.remove(el); // stop any running animation
         anime({
             targets: el,
             skewY: 15,
@@ -466,6 +467,27 @@ footerLink.forEach (el => {
             targets: el,
             opacity: [0.6, 1],
             duration: 100,
+            easing: 'easeOutExpo'
+        });
+    });
+});
+
+
+captions.forEach (el => {
+    el.addEventListener("mouseenter", () => {
+        anime({
+            targets: ".caption-arrow",
+            translateX: [0,10],
+            duration: 200,
+            easing: 'easeOutExpo'
+        });
+    });
+
+    el.addEventListener('mouseleave', () => {
+        anime({
+            targets: ".caption-arrow",
+            translateX: [10,0],
+            duration: 200,
             easing: 'easeOutExpo'
         });
     });

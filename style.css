@@ -404,7 +404,14 @@ footer p {
     line-height: 1.5;
     position: absolute;
     display: flex;
+    align-items: center;
     gap: 32px;
+    cursor: pointer;
+}
+
+.caption-arrow {
+    width: 28px;
+    height: 28px;
 }
 
 .feature > img {
@@ -469,7 +476,7 @@ img, .display-text {
 }
 
 #around .caption {
-    right: 400px;
+    right: 336px;
     top: 500px;
 }
 
@@ -490,7 +497,7 @@ img, .display-text {
 }
 
 #facet .caption {
-    left: 50px;
+    left: 0;
     top: 530px;
 }
 
@@ -538,7 +545,7 @@ img, .display-text {
 }
 
 #key .caption {
-    right: 130px;
+    right: 80px;
     top: 620px;
 }
 
