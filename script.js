@@ -10,7 +10,7 @@ const footerLink = document.querySelectorAll(".footer-link");
 const footer = document.querySelector("footer");
 const captions = document.querySelectorAll(".caption");
 const body = document.querySelectorAll('body');
-const headerAll = document.querySelectorAll('#new-wordmark img, #subheader-1, #subheader-2, #subheader-3,  #header-info');
+const headerAll = document.querySelectorAll('#new-wordmark img, #subheader-1, #subheader-2, #subheader-3,  #header-info, #scroll');
 const skewTargets = document.querySelectorAll('.skewer');
 const skewTargets2 = document.querySelectorAll('.skewer2');
 const sound = document.getElementById('hover-sound');
@@ -382,7 +382,7 @@ window.addEventListener('load', () => {
 
     setTimeout(() => {
         anime({
-            targets: '#header-info',
+            targets: ['#header-info', "#scroll"],
             opacity: [0, 1],
             translateY: [40, 0],
             easing: 'easeOutExpo',
@@ -390,6 +390,17 @@ window.addEventListener('load', () => {
             delay: anime.stagger(300)
         });
     }, 4000);
+
+    setTimeout(() => {
+        anime({
+            targets: ["#scroll"],
+            opacity: [0, 1],
+            translateY: [40, 0],
+            easing: 'easeOutExpo',
+            duration: 4000,
+            delay: anime.stagger(300)
+        });
+    }, 75000);
 
     anime({
         targets: 'nav',
@@ -402,7 +413,7 @@ window.addEventListener('load', () => {
     setTimeout(() => {
         allowScroll = true;
         document.body.style.overflow = '';
-    }, 7000);
+    }, 7500);
 
 });
 

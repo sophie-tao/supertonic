@@ -145,6 +145,14 @@ header {
     scroll-snap-align: center;
 }
 
+#scroll {
+    position: absolute;
+    bottom: 30px;
+    margin: auto;
+    left: 45%;
+    opacity: 0;
+}
+
 
 
 
