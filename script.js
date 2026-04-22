@@ -24,7 +24,26 @@ const esound = document.getElementById('e-sound');
 const fsound = document.getElementById('f-sound');
 const fssound = document.getElementById('fs-sound');
 const gsound = document.getElementById('g-sound');
-const gssound = document.getElementById('gs-sound');
+const d1 = document.getElementById('d1');
+const d2 = document.getElementById('d2');
+const d3 = document.getElementById('d3');
+const d4 = document.getElementById('d4');
+const d5 = document.getElementById('d5');
+const d6 = document.getElementById('d6');
+const d7 = document.getElementById('d7');
+const d8 = document.getElementById('d8');
+const d9 = document.getElementById('d9');
+const d10 = document.getElementById('d10');
+const d11 = document.getElementById('d11');
+const d12 = document.getElementById('d12');
+const d13 = document.getElementById('d13');
+const d14 = document.getElementById('d14');
+const d15 = document.getElementById('d15');
+const d16 = document.getElementById('d16');
+const d17 = document.getElementById('d17');
+const d18 = document.getElementById('d18');
+
+
 
 qFrames.forEach(frame => {
     const elements = frame.querySelectorAll('.q p, .q-square');
@@ -64,11 +83,25 @@ function handleScroll() {
         const progress = Math.min(scrollY / windowH, 1);
     
         headerAll.forEach((el, i) => {
-            const offset = i * 0.03; // stagger delay per letter
+            // const offset = i * 0.03;
+            // const p = Math.max(0, Math.min(1, progress - offset));
+        
+            // el.style.opacity = Math.max(0, 1 - 4*p);
+            // el.style.transform = `translateY(${p * -30}px)`;
+            const offset = i * 0.03;
             const p = Math.max(0, Math.min(1, progress - offset));
         
-            el.style.opacity = Math.max(0, 1 - 4*p);
+            const opacity = Math.max(0, 1 - 4 * p);
+        
+            el.style.opacity = opacity;
             el.style.transform = `translateY(${p * -30}px)`;
+        
+            // 👇 toggle pointer events
+            if (opacity <= 0.01) {
+                el.style.pointerEvents = 'none';
+            } else {
+                el.style.pointerEvents = 'auto';
+            }
         });
     }
     
@@ -447,52 +480,92 @@ footer.addEventListener("mouseleave", () => {
 
 
 document.getElementById('letter-s').addEventListener('mouseenter', () => {
-    const s = csound.cloneNode();
+    const s = d1.cloneNode();
     s.volume = 0.2;
     s.play();
 });
 document.getElementById('letter-u').addEventListener('mouseenter', () => {
-    const s = cssound.cloneNode();
+    const s = d2.cloneNode();
     s.volume = 0.2;
     s.play();
 });
 document.getElementById('letter-p').addEventListener('mouseenter', () => {
-    const s = dssound.cloneNode();
+    const s = d3.cloneNode();
     s.volume = 0.2;
     s.play();
 });
 document.getElementById('letter-e').addEventListener('mouseenter', () => {
-    const s = fsound.cloneNode();
+    const s = d4.cloneNode();
     s.volume = 0.2;
     s.play();
 });
 document.getElementById('letter-r').addEventListener('mouseenter', () => {
-    const s = fssound.cloneNode();
+    const s = d5.cloneNode();
     s.volume = 0.2;
     s.play();
 });
 document.getElementById('letter-t').addEventListener('mouseenter', () => {
-    const s = gssound.cloneNode();
+    const s = d6.cloneNode();
     s.volume = 0.2;
     s.play();
 });
 document.getElementById('letter-o').addEventListener('mouseenter', () => {
-    const s = assound.cloneNode();
+    const s = d7.cloneNode();
     s.volume = 0.2;
     s.play();
 });
 document.getElementById('letter-n').addEventListener('mouseenter', () => {
-    const s = gssound.cloneNode();
+    const s = d8.cloneNode();
     s.volume = 0.2;
     s.play();
 });
 document.getElementById('letter-i').addEventListener('mouseenter', () => {
-    const s = fssound.cloneNode();
+    const s = d9.cloneNode();
     s.volume = 0.2;
     s.play();
 });
 document.getElementById('letter-c').addEventListener('mouseenter', () => {
-    const s = gssound.cloneNode();
+    const s = d10.cloneNode();
+    s.volume = 0.2;
+    s.play();
+});
+document.getElementById('letter-su').addEventListener('mouseenter', () => {
+    const s = d11.cloneNode();
+    s.volume = 0.2;
+    s.play();
+});
+document.getElementById('letter-nobashibou-1').addEventListener('mouseenter', () => {
+    const s = d12.cloneNode();
+    s.volume = 0.2;
+    s.play();
+});
+document.getElementById('letter-pa').addEventListener('mouseenter', () => {
+    const s = d13.cloneNode();
+    s.volume = 0.2;
+    s.play();
+});
+document.getElementById('letter-nobashibou-2').addEventListener('mouseenter', () => {
+    const s = d14.cloneNode();
+    s.volume = 0.2;
+    s.play();
+});
+document.getElementById('letter-to').addEventListener('mouseenter', () => {
+    const s = d15.cloneNode();
+    s.volume = 0.2;
+    s.play();
+});
+document.getElementById('letter-ni').addEventListener('mouseenter', () => {
+    const s = d16.cloneNode();
+    s.volume = 0.2;
+    s.play();
+});
+document.getElementById('letter-xtu').addEventListener('mouseenter', () => {
+    const s = d17.cloneNode();
+    s.volume = 0.2;
+    s.play();
+});
+document.getElementById('letter-ku').addEventListener('mouseenter', () => {
+    const s = d18.cloneNode();
     s.volume = 0.2;
     s.play();
 });
