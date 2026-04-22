@@ -5,7 +5,8 @@ const navSqrs = document.querySelectorAll('.nav-link-group img');
 const header = document.querySelector('header');
 const qFrames = document.querySelectorAll('.q-frame');
 const blackSection = document.getElementById('black-section');
-const footerLinks = document.querySelectorAll("#footer-links");
+const footerLinks = document.querySelector("#footer-links");
+const footerLink = document.querySelectorAll(".footer-link");
 const footer = document.querySelector("footer");
 const body = document.querySelectorAll('body');
 const headerAll = document.querySelectorAll('#new-wordmark img, #subheader-1, #subheader-2, #subheader-3,  #header-info');
@@ -398,6 +399,33 @@ skewTargets.forEach(el => {
 });
 
 
+footerLink.forEach (el => {
+    el.addEventListener("mouseenter", () => {
+        anime({
+            targets: el,
+            opacity: [1,0.6],
+            duration: 100,
+            easing: 'easeOutExpo'
+        });
+    });
+
+    el.addEventListener('mouseleave', () => {
+        anime({
+            targets: el,
+            opacity: [0.6, 1],
+            duration: 100,
+            easing: 'easeOutExpo'
+        });
+    });
+});
+
+footer.addEventListener("mouseenter", () => {
+    document.body.style.cursor = "url('images/cursor.svg'), auto";
+});
+footer.addEventListener("mouseleave", () => {
+    document.body.style.cursor = "url('images/cursor-white.svg'), auto";
+});
+
 
 document.getElementById('letter-s').addEventListener('mouseenter', () => {
     const s = csound.cloneNode();
@@ -435,17 +463,17 @@ document.getElementById('letter-o').addEventListener('mouseenter', () => {
     s.play();
 });
 document.getElementById('letter-n').addEventListener('mouseenter', () => {
-    const s = assound.cloneNode();
+    const s = gssound.cloneNode();
     s.volume = 0.2;
     s.play();
 });
 document.getElementById('letter-i').addEventListener('mouseenter', () => {
-    const s = assound.cloneNode();
+    const s = fssound.cloneNode();
     s.volume = 0.2;
     s.play();
 });
 document.getElementById('letter-c').addEventListener('mouseenter', () => {
-    const s = assound.cloneNode();
+    const s = gssound.cloneNode();
     s.volume = 0.2;
     s.play();
 });

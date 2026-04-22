@@ -209,7 +209,7 @@ header {
 }
 
 #subheader {
-    width: 41vw;
+    width: 39vw;
     display: flex;
     gap: 32px;
     flex-direction: column;
