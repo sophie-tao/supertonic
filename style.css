@@ -397,12 +397,14 @@ footer p {
     /* margin: 0 1rem; */
 }
 
-.feature p.caption {
+.feature .caption {
     font-size: 14px;
     font-family: "Archivo";
     font-weight: normal;
     line-height: 1.5;
     position: absolute;
+    display: flex;
+    gap: 32px;
 }
 
 .feature > img {
@@ -467,7 +469,7 @@ img, .display-text {
 }
 
 #around .caption {
-    right: 500px;
+    right: 400px;
     top: 500px;
 }
 
@@ -488,8 +490,8 @@ img, .display-text {
 }
 
 #facet .caption {
-    left: 100px;
-    top: 550px;
+    left: 50px;
+    top: 530px;
 }
 
 #facet .display-text > img {

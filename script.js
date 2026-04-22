@@ -10,7 +10,8 @@ const footerLink = document.querySelectorAll(".footer-link");
 const footer = document.querySelector("footer");
 const body = document.querySelectorAll('body');
 const headerAll = document.querySelectorAll('#new-wordmark img, #subheader-1, #subheader-2, #subheader-3,  #header-info');
-const skewTargets = document.querySelectorAll('span.skewer');
+const skewTargets = document.querySelectorAll('.skewer');
+const skewTargets2 = document.querySelectorAll('.skewer2');
 const sound = document.getElementById('hover-sound');
 const asound = document.getElementById('a-sound');
 const assound = document.getElementById('as-sound');
@@ -373,13 +374,11 @@ window.addEventListener('load', () => {
 
 
 skewTargets.forEach(el => {
-
     el.addEventListener('mouseenter', () => {
         anime.remove(el); // stop any running animation
-
         anime({
             targets: el,
-            skewY: -10,
+            skewY: -15,
             duration: 300,
             easing: 'easeOutExpo'
         });
@@ -387,7 +386,6 @@ skewTargets.forEach(el => {
 
     el.addEventListener('mouseleave', () => {
         anime.remove(el);
-
         anime({
             targets: el,
             skewY: 0,
@@ -395,7 +393,28 @@ skewTargets.forEach(el => {
             easing: 'easeOutExpo'
         });
     });
+});
 
+skewTargets2.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        anime.remove(el); // stop any running animation
+        anime({
+            targets: el,
+            skewY: 15,
+            duration: 300,
+            easing: 'easeOutExpo'
+        });
+    });
+
+    el.addEventListener('mouseleave', () => {
+        anime.remove(el);
+        anime({
+            targets: el,
+            skewY: 0,
+            duration: 300,
+            easing: 'easeOutExpo'
+        });
+    });
 });
 
 
