@@ -8,6 +8,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
 }
 
 @font-face {
@@ -19,15 +20,17 @@ html {
     unicode-range: U+3000-30FF, U+4E00-9FFF;
 }
 
+
 body {
     font-family: "Archivo", sans-serif;
     line-height: 1.5;
     width: 100vw;
+    cursor: url('images/cursor.svg'), auto;
 }
 
 main {
-    margin-top: calc(100vh + 500px);
-    padding: 70px;
+    /* margin-top: calc(100vh + 500px); */
+    padding: 0 70px;
 }
 
 
@@ -107,7 +110,7 @@ header {
     flex-shrink: 1;
     /* flex-grow: 0; */
     transition: none;
-    transform-origin: left center;
+    transform-origin: center;
 }
 
 #new-wordmark-jp {
@@ -125,7 +128,7 @@ header {
     display: block;
     flex-shrink: 1;
     transition: none;
-    transform-origin: left center;
+    transform-origin: center;
 }
 
 #letter-s #letter-p #letter-r #letter-o #letter-c #letter-su #letter-pa #letter-to #letter-xtu {
@@ -135,6 +138,13 @@ header {
 #letter-u #letter-e #letter-t #letter-n #letter-i #letter-nobashibou-1 #letter-nobashibou-2 #letter-ni #letter-ku {
     transform: skewY(30deg);
 }
+
+#hero-offset {
+    height: 130vh;
+    width: 100%;
+    scroll-snap-align: center;
+}
+
 
 
 
@@ -226,16 +236,27 @@ header, .q-frame {
 
 
 
+
+
 /* question sections */
 
 .q-frame {
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     /* background-color: #ffffff; */
     gap: 5rem;
+    margin: 80vh 0;
+    /* padding: 30vh 0; */
+    scroll-snap-align: center;
+    position: relative;
+}
+
+.q-frame > * {
+    position: relative;
+    top: -30px;
 }
 
 .q-frame img {
@@ -260,6 +281,91 @@ header, .q-frame {
     top: 2rem;
 }
 
+/* .q-frame img, .q p {
+    opacity: 0;
+    transform: translateY(40px);
+} */
+
+
+
+/* footer area */
+
+#last-white-q {
+    margin: 40vh 0 50vh 0;
+}
+
+#last-q {
+    margin: 0 0 45vh 0;
+    /* padding: 0 0 45vh 0; */
+}
+
+#black-section {
+    padding: 20vh 0 0 0;
+    margin: 0;
+}
+
+#footer-wordmark {
+    position: absolute;
+    left: 0;
+    width: 100vw;
+}
+
+#footer-links {
+    padding: 70px;
+    color: white;
+    display: flex;
+    width: 100%;
+    gap: 24px;
+    margin-top: calc(34.06vw + 35vh + 200px);
+    background-color: black;
+}
+
+.footer-link {
+    flex: auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+    opacity: 50%;
+}
+
+.footer-link > img {
+    width: 100%;
+    margin-bottom: 28px;
+}
+
+.footer-link-label {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-link-label img {
+    width: 10px;
+    height: 10px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    margin-top: 6px;
+}
+
+.footer-link-label-text {
+    flex-grow: 1;
+}
+
+footer {
+    background-color: white;
+    display: flex;
+    gap: 120px;
+    width: 100%;
+    padding: 50px 70px;
+    margin: 0;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+    font-size: 14px;
+}
+
 
 
 
@@ -278,7 +384,7 @@ header, .q-frame {
 
 .feature .display-text p {
     font-family: "Sofia Sans Condensed";
-    font-weight: 180;
+    font-weight: 170;
     font-size: 128px;
     line-height: 0.95;
     position: relative;
@@ -288,7 +394,7 @@ header, .q-frame {
     font-family: "Noto Sans JP";
     font-weight: 150;
     font-size: 100px;
-    margin: 0 1rem;
+    /* margin: 0 1rem; */
 }
 
 .feature p.caption {
@@ -302,6 +408,7 @@ header, .q-frame {
 .feature > img {
     position: absolute;
     z-index: 9;
+    pointer-events: none;
 }
 
 .feature .display-text img {
@@ -314,15 +421,17 @@ img, .display-text {
     will-change: transform;
 }
 
-.feature .display-text p,
+/* .feature .display-text p,
 .feature .display-text img,
 .feature .caption {
     opacity: 0;
     transform: translateY(40px);
-}
+} */
 
-.display-text:hover {
-    transform: skewY(-5deg);
+.skewer {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -333,17 +442,17 @@ img, .display-text {
 }
 
 #around .display-text {
-    right: 170px;
+    right: 200px;
     top: 100px;
 }
 
 #around .display-text > img {
-    left: 155px;
+    left: 100px;
     top: -30px;
 }
 
 #around .display-text p:nth-child(2) {
-    left: 100px;
+    left: 60px;
 }
 
 #around .display-text p:nth-child(4) {
@@ -371,7 +480,7 @@ img, .display-text {
 }
 
 #facet .display-text p:nth-child(3) {
-    left: 120px;
+    left: 100px;
 }
 
 #facet .display-text p:nth-child(5) {
@@ -384,6 +493,86 @@ img, .display-text {
 }
 
 #facet .display-text > img {
-    left: 55px;
+    left: 40px;
+    top: -30px;
+}
+
+
+
+#key {
+    margin-top: 100px;
+}
+
+#key .display-text {
+    right: 170px;
+    top: 100px;
+}
+
+#key .display-text > img {
+    left: 23px;
+    top: -25px;
+}
+
+#key .display-text p:nth-child(2) {
+    left: 10px;
+}
+
+#key .display-text p:nth-child(3) {
+    left: 50px;
+}
+
+#key .display-text p:nth-child(4) {
+    left: 130px;
+}
+
+#key .display-text p:nth-child(5) {
+    left: 110px;
+}
+
+#key > img {
+    width: 868px;
+    left: 0;
+    top: 80px;
+}
+
+#key .caption {
+    right: 130px;
+    top: 620px;
+}
+
+
+#cage {
+    margin-top: 150px;
+}
+
+#cage > img {
+    width: 560px;
+    right: 150px;
+    top: 150px;
+}
+
+#cage .display-text {
+    left: 50px;
+}
+
+#cage .display-text p:nth-child(2) {
+    left: 100px;
+}
+
+#cage .display-text p:nth-child(4) {
+    left: 100px;
+}
+
+#cage .display-text p:nth-child(5) {
+    left: 60px;
+}
+
+#cage .caption {
+    left: 130px;
+    top: 530px;
+}
+
+#cage .display-text > img {
+    left: 140px;
     top: -30px;
 }
